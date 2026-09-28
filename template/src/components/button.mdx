@@ -1,0 +1,213 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/addon-docs/blocks"
+import { ArrowRightIcon } from "lucide-react"
+
+import { DataAttributes } from "@/docs/blocks/data-attributes"
+import { ComponentRules, Tip, UsageGuidelines } from "@/docs/blocks/guidelines"
+
+import { Button } from "./button"
+import * as Stories from "./button.stories"
+
+<Meta of={Stories} />
+
+# Button
+
+Buttons trigger an action with a single click: submitting a form, opening a
+dialog, confirming or cancelling a step. The label says what will happen.
+
+<Canvas of={Stories.Default} />
+
+## Features
+
+- Six variants, from the filled primary to a plain link, in four text sizes and
+  four icon sizes.
+- Icons marked with `data-icon` pull the padding in on their side.
+- Renders as a link, or any other element, through Base UI's `render` prop.
+- `destructive` is a red tint, so it never outshouts the primary action.
+
+## Usage
+
+```tsx
+import { Button } from "@/components/button"
+
+export function Actions() {
+  return (
+    <div className="flex gap-2">
+      <Button variant="ghost">Cancel</Button>
+      <Button>Save changes</Button>
+    </div>
+  )
+}
+```
+
+Use one default button per view, and give every other action a quieter
+variant.
+
+## Guidelines
+
+<UsageGuidelines
+  guidelines={[
+    "Use one default (primary) button per view. Every other action gets a lower emphasis variant.",
+    "Keep labels to one to three words, in sentence case, starting with a verb.",
+    <>
+      Mark icons with <code>data-icon="inline-start"</code> or{" "}
+      <code>"inline-end"</code> so the padding adjusts for them.
+    </>,
+    "Let the label set the width. Stretch a button only on narrow layouts where it spans the container.",
+    "Keep 8px between buttons in a group.",
+  ]}
+/>
+
+<Tip>
+  For navigation, render Button as a link with{" "}
+  <code>{'render={<a href="/pricing" />}'}</code> and{" "}
+  <code>{"nativeButton={false}"}</code>. It keeps the look and gets link
+  semantics.
+</Tip>
+
+## Examples
+
+### Kinds
+
+Six variants, from most to least emphasis. `destructive` is a tinted fill,
+not a solid red, so it never outshouts the primary action.
+
+<Canvas of={Stories.AllVariants} />
+
+### Sizes
+
+Four text sizes, `xs` to `lg`, and four square `icon` sizes to match.
+
+<Canvas of={Stories.AllSizes} />
+
+### With an icon
+
+Mark the icon with `data-icon` and the padding on that side tightens.
+
+<Canvas of={Stories.WithIcon} />
+
+### Icon only
+
+An `icon` size, named with `aria-label`.
+
+<Canvas of={Stories.IconOnly} />
+
+### Disabled
+
+`disabled` dims the button and ignores the pointer.
+
+<Canvas of={Stories.Disabled} />
+
+## Do's and don'ts
+
+<ComponentRules
+  rules={[
+    {
+      positive: {
+        component: (
+          <div className="flex gap-2">
+            <Button variant="ghost">Cancel</Button>
+            <Button>Save changes</Button>
+          </div>
+        ),
+        description: "Pair one primary action with a quieter secondary one.",
+      },
+      negative: {
+        component: (
+          <div className="flex gap-2">
+            <Button>Cancel</Button>
+            <Button>Save changes</Button>
+          </div>
+        ),
+        description:
+          "Don't put two primary buttons side by side. Nothing tells people which one matters.",
+      },
+    },
+    {
+      positive: {
+        component: <Button>Create project</Button>,
+        description: "Use sentence case and a verb that names the outcome.",
+      },
+      negative: {
+        component: <Button>CREATE PROJECT!</Button>,
+        description: "Don't use all caps, title case or punctuation.",
+      },
+    },
+    {
+      positive: {
+        component: (
+          <Button variant="outline">
+            Continue
+            <ArrowRightIcon data-icon="inline-end" />
+          </Button>
+        ),
+        description: "Put a directional icon after the label it points from.",
+      },
+      negative: {
+        component: (
+          <div className="flex gap-2">
+            <Button variant="secondary">Yes</Button>
+            <Button variant="secondary">No</Button>
+          </div>
+        ),
+        description:
+          "Don't use vague labels that force people to reread the question.",
+      },
+    },
+  ]}
+/>
+
+## API reference
+
+Button takes every prop of Base UI's `Button`, including `render` for
+rendering as a link.
+
+<ArgTypes of={Stories.Default} />
+
+### Data attributes
+
+<DataAttributes
+  rows={[
+    {
+      attribute: 'data-slot="button"',
+      element: "The button",
+      when: "Always.",
+    },
+    {
+      attribute: "data-disabled",
+      element: "The button",
+      when: "The button is disabled.",
+    },
+    {
+      attribute: "data-icon",
+      element: "An icon inside the button",
+      when: (
+        <>
+          You set it: <code>inline-start</code> or <code>inline-end</code>.
+        </>
+      ),
+    },
+  ]}
+/>
+
+## Accessibility
+
+<UsageGuidelines
+  guidelines={[
+    <>
+      Icon-only buttons need an <code>aria-label</code>. The icon is decorative.
+    </>,
+    <>
+      Only disable a button when the reason is obvious nearby. Otherwise keep it
+      enabled and explain what's missing on submit.
+    </>,
+    <>
+      The focus ring is a 3px <code>ring-subtle</code> halo over a{" "}
+      <code>ring</code> border, and it shows for keyboard focus only.
+    </>,
+  ]}
+/>
+
+## References
+
+- [Base UI Button](https://base-ui.com/react/components/button)
+- [WAI-ARIA button pattern](https://www.w3.org/WAI/ARIA/apg/patterns/button/)

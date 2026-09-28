@@ -1,0 +1,130 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+
+import { TokenFamily } from "@/docs/blocks/color-tokens"
+import { ComponentRules, Tip } from "@/docs/blocks/guidelines"
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+Components never name a colour. They read semantic tokens, such as
+`bg-primary` or `text-muted-foreground`, and each token points at a raw
+colour once for light mode and once for dark.
+
+## How the layers work
+
+Three layers, and components only ever touch the last one.
+
+1. **Primitives** are raw colours, such as Tailwind's `neutral-900` and
+   `red-700`.
+2. **Semantic tokens** live in `globals.css`. Each names a job, such as
+   `--primary` or `--destructive`, and points at a primitive once for light
+   mode and once for dark.
+3. **Utilities** come from `@theme inline`, which turns every semantic token
+   into Tailwind classes: `bg-primary`, `text-muted-foreground`,
+   `border-border`.
+
+```css
+/* globals.css */
+:root {
+  --primary: var(--color-neutral-900);
+}
+
+.dark {
+  --primary: var(--color-neutral-50);
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+}
+```
+
+```tsx
+<button className="bg-primary text-primary-foreground">Save</button>
+```
+
+Swapping a theme means changing the second layer. Every component follows,
+and none of them change.
+
+<Tip>
+  The tables below are read from `src/styles/globals.css` itself, so they
+  always match the code. Keep the names the same as your Figma variables.
+</Tip>
+
+## Surfaces
+
+<TokenFamily name="surfaces" />
+
+## Text
+
+<TokenFamily name="text" />
+
+## Actions
+
+<TokenFamily name="actions" />
+
+## Status
+
+<TokenFamily name="status" />
+
+## Lines and focus
+
+<TokenFamily name="lines" />
+
+## Charts
+
+<TokenFamily name="charts" />
+
+## Named alpha roles
+
+Tokens that end in `-subtle`, `-hover` or `-ring` are a colour at a set alpha,
+such as `red-700 at 8%`. They exist instead of opacity modifiers like
+`bg-destructive/10`, because Figma can't bind an opacity to a variable. Naming
+the role keeps the alpha in one place and gives design and code the same name
+to pick.
+
+## Do's and don'ts
+
+<ComponentRules
+  rules={[
+    {
+      positive: {
+        component: (
+          <span className="rounded-md bg-destructive px-2.5 py-1.5 text-sm font-medium text-destructive-foreground">
+            Delete project
+          </span>
+        ),
+        description:
+          "Use the semantic roles: the fill and the foreground made for it. They follow the theme into dark mode.",
+      },
+      negative: {
+        component: (
+          <span className="rounded-md bg-red-700 px-2.5 py-1.5 text-sm font-medium text-white">
+            Delete project
+          </span>
+        ),
+        description:
+          "Don't reach for Tailwind colours. They stay put when the theme or the mode changes.",
+      },
+    },
+    {
+      positive: {
+        component: (
+          <span className="rounded-md bg-primary-subtle px-2.5 py-1.5 text-sm font-medium">
+            Selected
+          </span>
+        ),
+        description: "Use a named alpha role for a tint.",
+      },
+      negative: {
+        component: (
+          <span className="rounded-md bg-primary/10 px-2.5 py-1.5 text-sm font-medium">
+            Selected
+          </span>
+        ),
+        description:
+          "Don't add an opacity modifier. Figma can't match it, and each one is a new colour to maintain.",
+      },
+    },
+  ]}
+/>

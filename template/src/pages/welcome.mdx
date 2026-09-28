@@ -1,0 +1,37 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+
+import { PageCards } from "@/docs/blocks/page-cards"
+import { brand } from "../../brand.config"
+
+<Meta title="Welcome" />
+
+<div className="kit-welcome">
+
+# {brand.name}
+
+The components, colours and type that make up this product, documented in one
+place. Every page shows the real, working component, in light and dark.
+
+## Start here
+
+<PageCards
+  cards={[
+    {
+      to: "foundations-colors--docs",
+      title: "Colors",
+      body: "The colour tokens every component uses, in light and dark.",
+    },
+    {
+      to: "foundations-typography--scale",
+      title: "Typography",
+      body: "The type scale, weights and fonts.",
+    },
+    {
+      to: "components-button--docs",
+      title: "Button",
+      body: "An example component page: usage, examples, do's and don'ts.",
+    },
+  ]}
+/>
+
+</div>

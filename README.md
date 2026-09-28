@@ -8,7 +8,8 @@ shareable component library. It is for designers who build with an AI agent
 (Claude Code or Cursor) and would rather not learn Storybook's internals to
 get there.
 
-> Status: planning. See [`plans/001-brief.md`](plans/001-brief.md).
+> Status: early. The shell is in `template/`; the guide and skills are next.
+> See [`plans/001-brief.md`](plans/001-brief.md).
 
 ## What is in it
 

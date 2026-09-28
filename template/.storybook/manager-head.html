@@ -1,0 +1,176 @@
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<style>
+  /*
+   * A quiet sidebar: no panel fill, 16px section roots over 14px muted items,
+   * and no fill on the selected item, just darker text. The --kit-* variables
+   * are set from brand.config.ts in theme.ts.
+   */
+  body {
+    background: var(--kit-bg) !important;
+  }
+  .container.sidebar-container {
+    background: none !important;
+  }
+  .sidebar-container .sidebar-header {
+    margin-top: 2px !important;
+    margin-left: 12px !important;
+  }
+  .sidebar-container .search-field,
+  #storybook-explorer-searchfield {
+    border-radius: 20px;
+  }
+
+  #storybook-explorer-menu .sidebar-item {
+    margin-left: -6px;
+    margin-bottom: 2px;
+  }
+  #storybook-explorer-tree > div > div {
+    margin-top: 8px;
+  }
+  /* A hairline between the pages and the component sections, centred in the
+     gap above Foundations. It sits outside the row, which Storybook clips. */
+  #storybook-explorer-menu [data-item-id="foundations"] {
+    position: relative;
+    margin-top: 25px;
+    overflow: visible !important;
+  }
+  #storybook-explorer-menu [data-item-id="foundations"]::before {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 6px;
+    right: 0;
+    height: 1px;
+    background: var(--kit-border);
+  }
+  [data-parent-id]:has(+ :not([data-parent-id])) {
+    margin-bottom: 16px !important;
+  }
+
+  #storybook-explorer-menu a,
+  #storybook-explorer-menu button {
+    font-family: var(--kit-font-sans);
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: var(--kit-muted);
+    padding-top: 6px;
+    padding-bottom: 6px;
+    align-items: center;
+  }
+  #storybook-explorer-menu .sidebar-item:not([data-parent-id]),
+  #storybook-explorer-menu .sidebar-item:not([data-parent-id]) a,
+  #storybook-explorer-menu .sidebar-item:not([data-parent-id]) button {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+  #storybook-explorer-menu [data-item-id] {
+    border-radius: 8px;
+  }
+  #storybook-explorer-menu [data-item-id]:focus {
+    background: none;
+  }
+  #storybook-explorer-menu [data-item-id]:hover {
+    background-color: var(--kit-hover);
+  }
+  #storybook-explorer-menu button[data-item-id] {
+    width: calc(100% - 16px);
+  }
+  #storybook-explorer-menu .sidebar-item [aria-expanded] {
+    margin-left: 6px;
+  }
+  #storybook-explorer-menu .sidebar-item button[aria-expanded] > div {
+    margin-top: 0;
+  }
+  #storybook-explorer-menu svg {
+    color: var(--kit-muted);
+  }
+
+  #storybook-explorer-menu [data-selected="true"],
+  #storybook-explorer-menu [data-selected="true"]:hover {
+    background: none;
+  }
+  #storybook-explorer-menu [data-selected="true"] a,
+  #storybook-explorer-menu [data-selected="true"] a svg {
+    color: var(--kit-fg);
+  }
+
+  /* Storybook 10 backs the item menu and status buttons with a fill and a
+     blurred glow to fade out the label beneath. Labels here are short enough
+     not to reach them, and the glow reads as a smudge on the selected row. */
+  #storybook-explorer-menu [data-testid="context-menu"],
+  #storybook-explorer-menu [data-testid="tree-change-status-button"] {
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Hairlines between sidebar, toolbar and page instead of shadows. */
+  div[role="main"] > div {
+    box-shadow: none !important;
+    border-left: 1px solid var(--kit-border);
+    border-radius: 0;
+  }
+  div[role="main"] > div > div > div > div {
+    border-bottom: 1px solid var(--kit-border);
+    box-shadow: none !important;
+  }
+
+  /* Storybook's own type icons give way to the Lucide ones in the label. */
+  #storybook-explorer-menu svg[type] {
+    display: none;
+  }
+  .kit-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .kit-icon {
+    flex-shrink: 0;
+    color: var(--kit-muted);
+  }
+  #storybook-explorer-menu [data-selected="true"] .kit-icon {
+    color: var(--kit-fg);
+  }
+  .kit-status {
+    font: 500 10px/1 var(--kit-font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 3px 6px;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+  }
+  .kit-status--new {
+    color: #15803d;
+  }
+  .kit-status--beta {
+    color: #1d4ed8;
+  }
+  .kit-status--deprecated {
+    color: #b91c1c;
+  }
+  [data-kit-theme="dark"] .kit-status--new {
+    color: #4ade80;
+  }
+  [data-kit-theme="dark"] .kit-status--beta {
+    color: #60a5fa;
+  }
+  [data-kit-theme="dark"] .kit-status--deprecated {
+    color: #f87171;
+  }
+</style>
+
+<script>
+  // Widen the nav to 244px so long story names fit. Only raises a
+  // narrower saved width; a wider one the reader dragged to is kept.
+  ;(function () {
+    var MIN = 244
+    try {
+      var layout = JSON.parse(localStorage.getItem("storybook-layout"))
+      if (layout && layout.resizerNav && layout.resizerNav.x >= MIN) return
+      layout = layout || {}
+      layout.resizerNav = { x: MIN, y: (layout.resizerNav || {}).y || 0 }
+      localStorage.setItem("storybook-layout", JSON.stringify(layout))
+    } catch (e) {}
+  })()
+</script>

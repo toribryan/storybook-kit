@@ -8,6 +8,12 @@ const config: StorybookConfig = {
   core: {
     disableWhatsNewNotifications: true,
   },
+  // Storybook's own onboarding is aimed at engineers learning Storybook, and
+  // its checklist sits at the top of the sidebar, above the design system.
+  features: {
+    sidebarOnboardingChecklist: false,
+    menuOnboardingChecklist: false,
+  },
 }
 
 export default config

@@ -46,7 +46,7 @@ Either works with everything in this guide.
 
 ## 3. Get the kit
 
-1. Go to the storybook-kit repository on GitHub.
+1. Go to [github.com/toribryan/storybook-kit](https://github.com/toribryan/storybook-kit).
 2. Click the green Code button, then Download ZIP.
 3. Unzip it. Inside you'll find a folder called `template`.
 4. Move `template` to wherever you keep your projects and rename it after your

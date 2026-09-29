@@ -26,3 +26,11 @@ get there.
 ## Credits
 
 The shell started life in [fibo](https://fibo.toribryan.com).
+
+storybook-kit is an independent project. It isn't made by or affiliated with
+the Storybook team; it's a template built on top of
+[Storybook](https://storybook.js.org).
+
+## Licence
+
+[MIT](LICENSE)

@@ -6,7 +6,7 @@ Your Storybook is where your design system lives in code. Once it's running,
 you work in two steps:
 
 - **Build components.** Give your agent a Figma frame, and it builds the
-  component using your colours and type.
+  component using your colors and type.
 - **Write their docs pages.** Each component has a page with a live example,
   usage guidelines, do's and don'ts, and accessibility notes. You decide what
   the guidance says, and your agent lays it out.
@@ -91,7 +91,7 @@ the terminal and press Ctrl+C (on a Mac too, not Cmd).
 ## 6. Make it yours
 
 Open `brand.config.ts` in your project folder. This one file sets your
-Storybook's name, logo, fonts and frame colours, and a note beside each
+Storybook's name, logo, fonts and frame colors, and a note beside each
 setting explains what it does.
 
 - `name` appears at the top of the sidebar and in the browser tab.
@@ -101,7 +101,7 @@ setting explains what it does.
 - `fonts` takes the names of your fonts and a Google Fonts link that loads
   them. On [fonts.google.com](https://fonts.google.com), pick your fonts, click
   Get embed code, and copy the web address from the `href` part of the link.
-- `chrome` sets the colours of the frame around your components, meaning the
+- `chrome` sets the colors of the frame around your components, meaning the
   sidebar and toolbar, once for light mode and once for dark.
 - `links` takes the web addresses of your Figma file and GitHub project. Each
   one adds a card to the bottom of every docs page. Leave a link empty to hide
@@ -111,9 +111,9 @@ Save the file. The docs pages update straight away. The sidebar and toolbar
 only change when Storybook starts, so press Ctrl+C in the terminal and run
 `npm run storybook` again.
 
-## 7. Add your colours
+## 7. Add your colors
 
-Your components take their colours from `src/styles/globals.css`. Each colour
+Your components take their colors from `src/styles/globals.css`. Each color
 there is a token: a named value such as `--primary` or `--border`. The block
 that starts with `:root` sets each token for light mode, and the block that
 starts with `.dark` sets it for dark mode. Change a value and every component

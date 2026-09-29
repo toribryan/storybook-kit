@@ -7,12 +7,12 @@
 
 /*
  * Your design tokens. Components only ever use the semantic roles below
- * (`bg-primary`, `text-muted-foreground`), never a raw colour, so retheming
+ * (`bg-primary`, `text-muted-foreground`), never a raw color, so retheming
  * means editing the `:root` and `.dark` blocks and nothing else. Keep the
  * names the same as your Figma variables so design and code agree.
  *
  * The starting values are an achromatic theme: `primary` is a neutral and
- * colour only carries meaning (destructive, success, warning, info).
+ * color only carries meaning (destructive, success, warning, info).
  */
 @theme inline {
   --color-background: var(--background);
@@ -87,7 +87,7 @@
 
 /*
  * Status tones sit on the 700 step rather than 600: at 600, white text on a
- * solid success or warning fill measures 3.3:1, and coloured text on its own
+ * solid success or warning fill measures 3.3:1, and colored text on its own
  * subtle tint measures under 3:1. The 700 step with an 8% tint clears AA on
  * both. Dark mode stays on 400, which already clears it.
  */

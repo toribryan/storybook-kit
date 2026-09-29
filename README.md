@@ -11,7 +11,7 @@ not learn how Storybook works inside.
 ## How it works
 
 1. **Build.** Give your agent a Figma frame. It builds the component in code,
-   using colour and type tokens that match your Figma variables.
+   using color and type tokens that match your Figma variables.
 2. **Document.** Each component gets a docs page with a live example, usage
    guidelines, do's and don'ts shown side by side, and accessibility notes.
    You write the guidance in plain words, and your agent lays it out.
@@ -26,7 +26,7 @@ not learn how Storybook works inside.
 
 - **The shell.** A Storybook with a calm interface: a clean sidebar, light and
   dark themes, and docs pages for anatomy, usage and do's and don'ts. You set
-  the name, logo, fonts and sidebar colours in one file.
+  the name, logo, fonts and sidebar colors in one file.
 - **The guide.** Every step from an empty laptop to a running Storybook,
   written for people who have never opened a terminal.
 - **The skills (coming next).** Instructions your agent follows to set up the
@@ -41,6 +41,6 @@ storybook-kit is an independent template built on
 [Storybook](https://storybook.js.org). The Storybook team did not make it and
 is not affiliated with it.
 
-## Licence
+## License
 
 [MIT](LICENSE)

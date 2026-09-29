@@ -1,12 +1,12 @@
 /*
- * Your Storybook's name, logo, fonts and colours. This is the only file you
+ * Your Storybook's name, logo, fonts and colors. This is the only file you
  * need to edit to make the Storybook look like yours.
  *
  * Docs pages update as soon as you save. The sidebar and toolbar are built
  * once when Storybook starts, so stop it and run `npm run storybook` again
  * to see changes there.
  *
- * The colours here are for the Storybook frame: the sidebar and toolbar.
+ * The colors here are for the Storybook frame: the sidebar and toolbar.
  * Docs pages and components use the tokens in src/styles/globals.css.
  */
 

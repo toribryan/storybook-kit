@@ -7,15 +7,15 @@ import { ComponentRules, Tip } from "@/docs/blocks/guidelines"
 
 # Colors
 
-Components never name a colour. They read semantic tokens, such as
+Components never name a color. They read semantic tokens, such as
 `bg-primary` or `text-muted-foreground`, and each token points at a raw
-colour once for light mode and once for dark.
+color once for light mode and once for dark.
 
 ## How the layers work
 
 Three layers, and components only ever touch the last one.
 
-1. **Primitives** are raw colours, such as Tailwind's `neutral-900` and
+1. **Primitives** are raw colors, such as Tailwind's `neutral-900` and
    `red-700`.
 2. **Semantic tokens** live in `globals.css`. Each names a job, such as
    `--primary` or `--destructive`, and points at a primitive once for light
@@ -77,7 +77,7 @@ and none of them change.
 
 ## Named alpha roles
 
-Tokens that end in `-subtle`, `-hover` or `-ring` are a colour at a set alpha,
+Tokens that end in `-subtle`, `-hover` or `-ring` are a color at a set alpha,
 such as `red-700 at 8%`. They exist instead of opacity modifiers like
 `bg-destructive/10`, because Figma can't bind an opacity to a variable. Naming
 the role keeps the alpha in one place and gives design and code the same name
@@ -104,7 +104,7 @@ to pick.
           </span>
         ),
         description:
-          "Don't reach for Tailwind colours. They stay put when the theme or the mode changes.",
+          "Don't reach for Tailwind colors. They stay put when the theme or the mode changes.",
       },
     },
     {
@@ -123,7 +123,7 @@ to pick.
           </span>
         ),
         description:
-          "Don't add an opacity modifier. Figma can't match it, and each one is a new colour to maintain.",
+          "Don't add an opacity modifier. Figma can't match it, and each one is a new color to maintain.",
       },
     },
   ]}

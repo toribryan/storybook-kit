@@ -33,7 +33,7 @@ Taken from fibo's `apps/storybook/.storybook` and `src/blocks`:
 | From fibo                          | Becomes                                         |
 | ---------------------------------- | ----------------------------------------------- |
 | `theme.ts` (hand-copied hex)       | A manager theme generated from `brand.config.ts` |
-| `manager-head.html` sidebar CSS    | The same, with fibo's colours swapped for variables |
+| `manager-head.html` sidebar CSS    | The same, with fibo's colors swapped for variables |
 | `manager.tsx` icons, status pills  | The same, icon map driven by config             |
 | `theme-sync.ts`, `preview.tsx`     | Light and dark toggle, as is                    |
 | `docs-container.tsx`, `typography.tsx` | Docs page layout and MDX typography         |
@@ -44,7 +44,7 @@ Stays in fibo: the welcome page, hero, pixel grid, sounds and the snail.
 New for the kit:
 
 - `brand.config.ts`: name, logo, fonts, accent. The only file a designer edits.
-- Foundations pages (colour, type, spacing, radius) that render from the token
+- Foundations pages (color, type, spacing, radius) that render from the token
   CSS, so they update when tokens change.
 - Page templates: Welcome, Getting started, Changelog.
 
@@ -91,6 +91,6 @@ Watch one do it; where they stall is version 2.
   free on npm), or both.
 - Component base: Base UI like fibo, or plain components with no primitives
   library.
-- Licence. MIT is the default for this kind of project.
+- License. MIT is the default for this kind of project.
 - Whether "storybook-kit" reads as an official Storybook product. Storybook's
   name is theirs; the README should say this is an independent project.

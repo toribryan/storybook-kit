@@ -71,7 +71,7 @@ export function loadFonts() {
 /*
  * manager-head.html styles the sidebar with these variables. They come from
  * the brand file rather than being written into the HTML, so a designer edits
- * colours in one place.
+ * colors in one place.
  */
 export function chromeVariables() {
   const vars = (c: (typeof brand.chrome)[Mode]) =>

@@ -1,13 +1,5 @@
 # Getting started
 
-This guide takes you from an empty laptop to your own Storybook running in a
-browser tab, with your name, fonts and colours on it. You don't need to have
-used a terminal before. Plan on about 15 minutes, most of it spent waiting for
-downloads.
-
-You'll need a Mac or a Windows computer and an internet connection. A Figma
-file helps later, but you won't need one for this guide.
-
 ## What you'll build
 
 Your Storybook is where your design system lives in code. Once it's running,

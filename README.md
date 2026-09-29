@@ -8,6 +8,16 @@ documented component library you can share as a link. The kit is for
 designers who build with an AI agent (Claude Code or Cursor) and would rather
 not learn how Storybook works inside.
 
+## How it works
+
+1. **Build.** Give your agent a Figma frame. It builds the component in code,
+   using colour and type tokens that match your Figma variables.
+2. **Document.** Each component gets a docs page with a live example, usage
+   guidelines, do's and don'ts shown side by side, and accessibility notes.
+   You write the guidance in plain words, and your agent lays it out.
+3. **Share.** Publish the Storybook as a website and send the link to your
+   team. Designers and developers read the same pages.
+
 > Status: early. The shell is in `template/` and the guide is in
 > [`docs/getting-started.md`](docs/getting-started.md). The skills come next;
 > see [`plans/001-brief.md`](plans/001-brief.md).

@@ -8,6 +8,20 @@ downloads.
 You'll need a Mac or a Windows computer and an internet connection. A Figma
 file helps later, but you won't need one for this guide.
 
+## What you'll build
+
+Your Storybook is where your design system lives in code. Once it's running,
+you work in two steps:
+
+- **Build components.** Give your agent a Figma frame, and it builds the
+  component using your colours and type.
+- **Write their docs pages.** Each component has a page with a live example,
+  usage guidelines, do's and don'ts, and accessibility notes. You decide what
+  the guidance says, and your agent lays it out.
+
+Steps 1 to 5 get Storybook running. Steps 6 and 7 bring in your brand, step 8
+covers building and documenting components, and step 9 shares the result.
+
 ## 1. Install Node.js
 
 Node.js is the program that runs Storybook on your computer. You install it
@@ -117,7 +131,7 @@ directly, so it always shows your current values.
 Name your tokens after your Figma variables. Then designers reading Figma and
 developers reading the code use the same words for the same thing.
 
-## 8. Add a component
+## 8. Build and document a component
 
 Each component is three files in `src/components`. Button is there as an
 example:
@@ -131,6 +145,13 @@ example:
 To add your own, give your agent the link to the Figma frame and say which
 component it is. For example: "Add a Badge component from this Figma frame,
 with stories and a docs page like Button's."
+
+Then write its docs page. Open Button's docs page in Storybook to see the
+sections: usage, guidelines, do's and don'ts, and accessibility. Tell your
+agent what belongs in each, in your own words, for example: "In the Badge
+guidelines, say to keep labels to one or two words. For a do and don't, show
+a short label next to one that wraps." Your agent turns that into the page,
+with the real component in each example.
 
 ## 9. Share it
 
